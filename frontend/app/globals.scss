@@ -1,0 +1,30 @@
+@use '@carbon/react';
+
+@media (min-width: 42rem) {
+  .cds--grid--no-gutter {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+.cds--content {
+  margin-top: 3rem;
+  background: var(--cds-background);
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: #fff;
+}
+
+main {
+  width: 650px;
+  margin: 0 auto;
+  padding: 24px 0;
+}
