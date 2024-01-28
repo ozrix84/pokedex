@@ -15,8 +15,7 @@ export default function Search(props: SearchProps & FilterElementProps): JSX.Ele
           {...props}
           {...fieldProps}
           onChange={(e) => {
-            onChange(props.value);
-            props.onChange?.(e);
+            onChange(e.target.value);
           }}
         />
       )}

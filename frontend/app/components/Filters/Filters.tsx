@@ -1,61 +1,40 @@
 'use client';
-import { ButtonSet, Column, Dropdown, FlexGrid, Row } from '@carbon/react';
 import { FormProvider, useForm } from 'react-hook-form';
 import Button from '../Button';
+import Dropdown from '../Dropdown';
 import Search from '../Search';
 import { FilterValues } from './FilterTypes';
-
-const options = [
-  {
-    id: 1,
-    text: 'Type 1',
-  },
-  {
-    id: 2,
-    text: 'Type 2',
-  },
-];
+import { options } from './filterOptions';
 
 export default function Filters(): JSX.Element {
   const form = useForm<FilterValues>({
     defaultValues: {
       show: 'all',
-      type: 0,
+      type: 1,
       search: '',
     },
   });
 
   return (
     <FormProvider {...form}>
-      <FlexGrid>
-        <Row>
-          <ButtonSet>
-            <Button name="show" value="all">
-              All
-            </Button>
+      <Button name="show" value="all">
+        All
+      </Button>
 
-            <Button name="show" value="favorites">
-              Favorites
-            </Button>
-          </ButtonSet>
-        </Row>
+      <Button name="show" value="favorites">
+        Favorites
+      </Button>
 
-        <Row>
-          <Column>
-            <Search name="search" labelText={'Search'} />
-          </Column>
+      <Search name="search" labelText={'Search'} />
 
-          <Column>
-            <Dropdown
-              titleText={'Select pokemon type'}
-              label={'Type'}
-              id={'Dropdown.Type'}
-              itemToString={(item) => item?.text ?? ''}
-              items={options}
-            />
-          </Column>
-        </Row>
-      </FlexGrid>
+      <Dropdown
+        name={'type'}
+        titleText={'Select pokemon type'}
+        label={'Type'}
+        id={'Dropdown.Type'}
+        itemToString={(item) => item?.text ?? ''}
+        items={options}
+      />
     </FormProvider>
   );
 }

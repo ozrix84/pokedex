@@ -1,3 +1,8 @@
+export type Option = {
+  id: number;
+  text: string;
+};
+
 export type ShowOptions = 'all' | 'favorites';
 
 export type FilterValues = {
