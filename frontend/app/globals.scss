@@ -1,34 +1,38 @@
 @use '@carbon/react';
 
-@media (min-width: 42rem) {
-  .cds--grid--no-gutter {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-}
-
-.cds--content {
-  margin-top: 3rem;
-  background: var(--cds-background);
-}
+$base-color: #74c0a2;
 
 :root {
+  --background-rgb: 255, 255, 255;
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --cds-button-primary: #{$base-color};
+  --cds-link-primary: #{$base-color};
+  --cds-link-primary-hover: #{$base-color};
+  --cds-button-primary-active: #{$base-color};
+  --cds-button-primary-hover: #{$base-color};
+  --cds-focus: #{$base-color};
 }
 
 * {
   box-sizing: border-box;
+  border-block-end: none !important;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: #fff;
+  background: rgb(var(--background-rgb));
 }
 
 main {
   width: 650px;
   margin: 0 auto;
   padding: 24px 0;
+}
+
+.cds--dropdown__wrapper {
+  .cds--label {
+    display: none;
+  }
 }
