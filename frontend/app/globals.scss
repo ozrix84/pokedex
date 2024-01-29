@@ -1,8 +1,10 @@
 @use '@carbon/react';
+@use '@carbon/layout';
 
 $base-color: #74c0a2;
 
 :root {
+  --base-color: #{$base-color};
   --background-rgb: 255, 255, 255;
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -17,7 +19,6 @@ $base-color: #74c0a2;
 
 * {
   box-sizing: border-box;
-  border-block-end: none !important;
 }
 
 body {
@@ -28,11 +29,25 @@ body {
 main {
   max-width: 650px;
   margin: 0 auto;
-  padding: 24px;
+  padding: layout.$spacing-05;
 }
 
 .cds--dropdown__wrapper {
   .cds--label {
     display: none;
+  }
+}
+
+.cds--btn--ghost {
+  border-color: var(--base-color);
+}
+
+.cds--row {
+  margin-bottom: layout.$spacing-05;
+}
+
+[name='chevron--down'] {
+  path {
+    fill: var(--base-color);
   }
 }
